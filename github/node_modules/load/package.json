@@ -1,0 +1,28 @@
+{
+  "name": "load",
+  "version": "1.0.2",
+  "description": "Load plain JavaScript files that don't use module patterns directly in node.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/3rd-Eden/load.git"
+  },
+  "keywords": [
+    "load",
+    "require",
+    "module",
+    "import",
+    "export",
+    "amd",
+    "browser",
+    "exports"
+  ],
+  "author": "Arnout Kazemier",
+  "license": "MIT",
+  "devDependencies": {
+    "pre-commit": "0.0.x"
+  }
+}
