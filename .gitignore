@@ -1,0 +1,4 @@
+.env
+node modules
+.atlsserver.txt
+node_modules
