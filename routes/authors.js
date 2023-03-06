@@ -1,8 +1,10 @@
 const express = require('express')
 const router = express.Router()
-const Author = require('../models/author')
-const Book = require('../models/book')
+// const Author = require('../models/author')
+// const Book = require('../models/book')
 
+const Author = require('../author')
+const Book = require('../book')
 // All Authors Route
 router.get('/', async (req, res) => {
   let searchOptions = {}
@@ -33,7 +35,8 @@ router.post('/', async (req, res) => {
   try {
     const newAuthor = await author.save()
     res.redirect(`authors/${newAuthor.id}`)
-  } catch {
+  } catch(err) {
+    console.log(err);
     res.render('authors/new', {
       author: author,
       errorMessage: 'Error creating Author'
@@ -85,8 +88,8 @@ router.put('/:id', async (req, res) => {
 router.delete('/:id', async (req, res) => {
   let author
   try {
-    author = await Author.findById(req.params.id)
-    await author.remove()
+    author = await Author.findByIdAndRemove (req.params.id);
+    // author =  author.remove();
     res.redirect('/authors')
   } catch {
     if (author == null) {

@@ -1,6 +1,6 @@
-const mongoose = require('mongoose')
+const mongoose = require("mongoose")
 
-const Book = require('./book')
+const Book = require("./book")
 
 const authorSchema = new mongoose.Schema({
   name: {
@@ -20,5 +20,6 @@ authorSchema.pre('remove', function(next) {
     }
   })
 })
+
 
 module.exports = mongoose.model('Author', authorSchema)

@@ -14,7 +14,7 @@ const authorRouter = require('./routes/authors')
 const bookRouter = require('./routes/books')
 
 app.set('view engine', 'ejs')
-app.set('views', __dirname + '/views')
+// app.set('views', __dirname + '/views')
 app.set('layout', 'layouts/layout')
 
 app.use(expressLayouts)
@@ -24,6 +24,9 @@ app.use(bodyParser.urlencoded({ limit: '10mb', extended: false }))
 
 const mongoose = require('mongoose')
 mongoose.connect('mongodb+srv://ravi123:123@cluster0.obet5wu.mongodb.net/BookDirectory?retryWrites=true&w=majority', { useNewUrlParser: true })
+// mongodb+srv://ravi123:123@cluster0.obet5wu.mongodb.net/BookDirectory?retryWrites=true&w=majority
+// mongodb://127.0.0.1:27017/BookDirectory
+
 const db = mongoose.connection
 db.on('error', error => console.error(error))
 db.once('open', () => console.log('Connected to Mongoose'))
